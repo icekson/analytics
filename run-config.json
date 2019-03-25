@@ -1,0 +1,23 @@
+{
+  "apps" : [{
+    "name"        : "jobs-analytics",
+    "script"      : "./dist/main-jobs.js",
+    "watch"       : false,
+    "instances"  : 1,
+    "exec_mode"  : "cluster",
+    "env": {
+      "TYPE": "analytics",
+      "PORT": 3000,
+      "NODE_ENV": "prod"      
+    }
+  },{
+    "name"       : "web-api",
+    "script"     : "./dist/main.js",
+    "instances"  : 1,
+    "exec_mode"  : "cluster",
+    "env": {
+      "PORT": 4000,
+      "NODE_ENV": "prod"      
+    }
+  }]
+}
